@@ -10,7 +10,6 @@ function App() {
   // TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
   const filteredStudents = students.filter((student) => student.age >= 18);
   const onClickInfo = (age, grade) => {
-    console.log(age, grade);
     alert(`나이 : ${age}, 점수 : ${grade}`);
   };
 
