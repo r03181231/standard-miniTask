@@ -15,18 +15,23 @@ function App() {
     { name: "Kevin", age: 26, grade: "E" },
     { name: "Linda", age: 27, grade: "F" },
   ];
+  const addIdStudentsArray = students.map((student) => ({
+    ...student,
+    id: crypto.randomUUID(),
+  }));
+  console.log(addIdStudentsArray);
 
   const [minAge, setMinAge] = useState(18);
-  const [studentsArray, setStudentsArray] = useState(students);
+  const [studentsArray, setStudentsArray] = useState(addIdStudentsArray);
 
   // TODO: filter를 사용하여 minAge 이상의 학생들만 선택하세요.
   const filteredStudents = studentsArray.filter(
     (student) => student.age >= minAge
   );
   // TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요.
-  const studentList = filteredStudents.map((student, index) => {
+  const studentList = filteredStudents.map((student) => {
     return (
-      <li key={index}>
+      <li key={student.id}>
         {student.name} - Age: {student.age}, Grade: {student.grade}
       </li>
     );
