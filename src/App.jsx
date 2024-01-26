@@ -2,18 +2,18 @@ import React, { useState } from "react";
 
 function App() {
   const [students, setStudents] = useState([
-    { name: "Alice", age: 17, grade: "A" },
-    { name: "Bob", age: 18, grade: "B" },
-    { name: "Charlie", age: 16, grade: "C" },
-    { name: "Diana", age: 19, grade: "D" },
-    { name: "Elmo", age: 20, grade: "E" },
-    { name: "Fiona", age: 21, grade: "F" },
-    { name: "Gabe", age: 22, grade: "A" },
-    { name: "Hannah", age: 23, grade: "B" },
-    { name: "Irene", age: 24, grade: "C" },
-    { name: "Jenny", age: 25, grade: "D" },
-    { name: "Kevin", age: 26, grade: "E" },
-    { name: "Linda", age: 27, grade: "F" },
+    { id: 1, name: "Alice", age: 17, grade: "A" },
+    { id: 2, name: "Bob", age: 18, grade: "B" },
+    { id: 3, name: "Charlie", age: 16, grade: "C" },
+    { id: 4, name: "Diana", age: 19, grade: "D" },
+    { id: 5, name: "Elmo", age: 20, grade: "E" },
+    { id: 6, name: "Fiona", age: 21, grade: "F" },
+    { id: 7, name: "Gabe", age: 22, grade: "A" },
+    { id: 8, name: "Hannah", age: 23, grade: "B" },
+    { id: 9, name: "Irene", age: 24, grade: "C" },
+    { id: 10, name: "Jenny", age: 25, grade: "D" },
+    { id: 11, name: "Kevin", age: 26, grade: "E" },
+    { id: 12, name: "Linda", age: 27, grade: "F" },
   ]);
   const [filteredStudents, setFilteredStudents] = useState(students);
 
@@ -46,8 +46,8 @@ function App() {
       <button onClick={() => filterByGrade("A")}>A등급</button>
       <button onClick={resetFilter}>필터 초기화</button>
       <ul>
-        {filteredStudents.map((student, index) => (
-          <li key={index}>
+        {filteredStudents.map((student) => (
+          <li key={student.id}>
             {student.name} - Age: {student.age}, Grade: {student.grade}
           </li>
         ))}
