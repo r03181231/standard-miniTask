@@ -17,10 +17,12 @@ function App() {
   ];
 
   const [minAge, setMinAge] = useState(18);
-  // const [stateAge, setStateAge] = useState(0);
+  const [studentsArray, setStudentsArray] = useState(students);
 
   // TODO: filter를 사용하여 minAge 이상의 학생들만 선택하세요.
-  const filteredStudents = students.filter((student) => student.age >= minAge);
+  const filteredStudents = studentsArray.filter(
+    (student) => student.age >= minAge
+  );
   // TODO: map을 사용하여 필터링된 학생들의 정보를 표시하세요.
   const studentList = filteredStudents.map((student, index) => {
     return (
