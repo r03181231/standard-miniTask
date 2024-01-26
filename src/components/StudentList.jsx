@@ -4,10 +4,10 @@ import React from "react";
 function StudentList({ filteredStudents }) {
   return (
     <ul>
-      {filteredStudents.map((students, index) => {
-        const { name, age, grade } = students;
+      {filteredStudents.map((students) => {
+        const { id, name, age, grade } = students;
         return (
-          <li key={index}>
+          <li key={id}>
             {name} ({age}) - {grade}등급
           </li>
         );

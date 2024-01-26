@@ -4,10 +4,10 @@ import StudentList from "./components/StudentList";
 
 function App() {
   const initialStudents = [
-    { name: "Alice", age: 17, grade: "A" },
-    { name: "Bob", age: 18, grade: "B" },
-    { name: "Charlie", age: 16, grade: "C" },
-    { name: "Diana", age: 19, grade: "D" },
+    { id: 1, name: "Alice", age: 17, grade: "A" },
+    { id: 2, name: "Bob", age: 18, grade: "B" },
+    { id: 3, name: "Charlie", age: 16, grade: "C" },
+    { id: 4, name: "Diana", age: 19, grade: "D" },
   ];
 
   const [filteredStudents, setFilteredStudents] = useState(initialStudents);
