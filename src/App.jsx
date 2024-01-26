@@ -15,11 +15,12 @@ function App() {
     { name: "Kevin", age: 26, grade: "E" },
     { name: "Linda", age: 27, grade: "F" },
   ];
+
+  // id 생성 해보기
   const addIdStudentsArray = students.map((student) => ({
     ...student,
     id: crypto.randomUUID(),
   }));
-  console.log(addIdStudentsArray);
 
   const [minAge, setMinAge] = useState(18);
   const [studentsArray, setStudentsArray] = useState(addIdStudentsArray);
