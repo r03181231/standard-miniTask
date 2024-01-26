@@ -11,7 +11,7 @@ function App() {
   const filteredStudents = students.filter((student) => student.age >= 18);
   const onClickInfo = (age, grade) => {
     console.log(age, grade);
-    alert("나이 :", age, "점수 :", grade);
+    alert(`나이 : ${age}, 점수 : ${grade}`);
   };
 
   return (
