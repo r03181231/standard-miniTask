@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // TODO: FilterButtons 컴포넌트를 작성하세요. 필터링 옵션을 선택하는 버튼들을 포함해야 합니다.
-function FilterButtons({ filteredStudents, setFilteredStudents }) {
+function FilterButtons({ initialStudents, setFilteredStudents }) {
   const [minAge, setMinAge] = useState(18);
   const [grade, setGrade] = useState("A");
 
@@ -18,7 +18,7 @@ function FilterButtons({ filteredStudents, setFilteredStudents }) {
   };
 
   const resetFilter = () => {
-    setFilteredStudents((prevStudentsInfo) => prevStudentsInfo);
+    setFilteredStudents(initialStudents);
   };
 
   return (

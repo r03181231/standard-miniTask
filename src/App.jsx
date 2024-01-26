@@ -18,7 +18,7 @@ function App() {
       {/* TODO: FilterButtons 컴포넌트를 작성하고 필요한 props를 전달하세요. */}
       <FilterButtons
         /* 필요한 props를 여기에 전달하세요. */
-
+        initialStudents={initialStudents}
         setFilteredStudents={setFilteredStudents}
       />
 
