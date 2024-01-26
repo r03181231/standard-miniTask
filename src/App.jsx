@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function App() {
   // const idNum = crypto.randomUUID();
   const students = [
-    { name: "Alice", age: 17, grade: "A" },
-    { name: "Bob", age: 18, grade: "B" },
-    { name: "Charlie", age: 16, grade: "C" },
-    { name: "Diana", age: 19, grade: "D" },
+    { id: 1, name: "Alice", age: 17, grade: "A" },
+    { id: 2, name: "Bob", age: 18, grade: "B" },
+    { id: 3, name: "Charlie", age: 16, grade: "C" },
+    { id: 4, name: "Diana", age: 19, grade: "D" },
   ];
+
+  const [fourStudent, setFourStudent] = useState(students);
   // TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
-  const filteredStudents = students.filter((student) => student.age >= 18);
+  const filteredStudents = fourStudent.filter((student) => student.age >= 18);
   const onClickInformation = (age, grade) => {
     alert(`나이 : ${age}, 점수 : ${grade}`);
   };
@@ -19,10 +21,10 @@ function App() {
       <h1>학생 목록</h1>
       <ul>
         {/* TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
-        {filteredStudents.map((eighteenStudent, index) => {
-          const { name, age, grade } = eighteenStudent;
+        {filteredStudents.map((eighteenStudent) => {
+          const { id, name, age, grade } = eighteenStudent;
           return (
-            <div key={index}>
+            <div key={id}>
               <button onClick={() => onClickInformation(age, grade)}>
                 {name}
               </button>
