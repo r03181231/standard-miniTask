@@ -6,21 +6,19 @@ function FilterButtons({ filteredStudents, setFilteredStudents }) {
   const [grade, setGrade] = useState("A");
 
   const filterByAge = (minAge) => {
-    const filterByAgeStudent = filteredStudents.filter(
-      (student) => student.age >= minAge
+    setFilteredStudents((prevStudentsInfo) =>
+      prevStudentsInfo.filter((student) => student.age >= minAge)
     );
-    setFilteredStudents(filterByAgeStudent);
   };
 
   const filterByGrade = (grade) => {
-    const filterByGradeStudent = filteredStudents.filter(
-      (student) => student.grade === grade
+    setFilteredStudents((prevStudentsInfo) =>
+      prevStudentsInfo.filter((student) => student.grade === grade)
     );
-    setFilteredStudents(filterByGradeStudent);
   };
 
   const resetFilter = () => {
-    setFilteredStudents(filteredStudents);
+    setFilteredStudents((prevStudentsInfo) => prevStudentsInfo);
   };
 
   return (
