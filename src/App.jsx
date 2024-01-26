@@ -2,18 +2,16 @@ import React, { useState } from "react";
 
 function App() {
   const students = [
-    { id: 1, name: "Alice", age: 17, grade: "A" },
-    { id: 2, name: "Bob", age: 18, grade: "B" },
-    { id: 3, name: "Charlie", age: 16, grade: "C" },
-    { id: 4, name: "Diana", age: 19, grade: "D" },
+    { name: "Alice", age: 17, grade: "A" },
+    { name: "Bob", age: 18, grade: "B" },
+    { name: "Charlie", age: 16, grade: "C" },
+    { name: "Diana", age: 19, grade: "D" },
   ];
-  // const id = crypto.randomUUID()
   // TODO: filter를 사용하여 18세 이상의 학생들만 선택하세요.
   const filteredStudents = students.filter((student) => student.age >= 18);
-  const [stu, setStu] = useState(filteredStudents); // Bob, Diana
-  const { id, name, age, grade } = stu;
-  const onAlertAgeName = (info) => {
-    if (info.id === id) alert(" age : ", info.age, "grade : ", info.grade);
+  const onClickInfo = (age, grade) => {
+    console.log(age, grade);
+    alert("나이 :", age, "점수 :", grade);
   };
 
   return (
@@ -21,15 +19,13 @@ function App() {
       <h1>학생 목록</h1>
       <ul>
         {/* TODO: map을 사용해서 filteredStudents를 여기에 렌더링하세요. */}
-        {filteredStudents.map((eighteenStudent) => {
+        {filteredStudents.map((eighteenStudent, index) => {
           console.log(eighteenStudent);
           const { id, name, age, grade } = eighteenStudent;
           return (
             <>
-              <div key={id}>
-                <button onClick={() => onAlertAgeName(eighteenStudent)}>
-                  {name}
-                </button>
+              <div key={index}>
+                <button onClick={() => onClickInfo(age, grade)}>{name}</button>
               </div>
             </>
           );
