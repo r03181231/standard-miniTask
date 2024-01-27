@@ -24,11 +24,11 @@ function App() {
         {filteredStudents.map((eighteenStudent) => {
           const { id, name, age, grade } = eighteenStudent;
           return (
-            <div key={id}>
+            <li key={id}>
               <button onClick={() => onClickInformation(age, grade)}>
                 {name}
               </button>
-            </div>
+            </li>
           );
         })}
         {/* TODO: 학생이름을 클릭하면 나이와 점수가 alert 돼야 해요.*/}
